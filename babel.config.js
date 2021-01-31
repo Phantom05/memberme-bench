@@ -31,7 +31,7 @@ module.exports = (api) => {
           root: ['.'],
           extensions: ['.ts', '.tsx'],
           alias: {
-            // '@': '.',
+            '~': '.',
             '@src': './src',
             '@components': './src/components',
             '@pages': './src/components/pages',
@@ -39,6 +39,7 @@ module.exports = (api) => {
             '@reducers': './src/store/reducers',
             '@actions': './src/store/actions',
             '@util': './src/util',
+            '@lib': './src/lib',
             '@styles': './src/styles',
           },
         },
