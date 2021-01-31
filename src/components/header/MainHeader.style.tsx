@@ -11,7 +11,7 @@ const Styled = {
   `,
   MainHeader: styled.header`
     ${common};
-    background: orange;
+    background: #ececec;
   `,
 };
 

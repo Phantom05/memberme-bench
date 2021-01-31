@@ -1,13 +1,16 @@
 import React from 'react';
-import { MainHeaderStyled, HeaderStyled } from '@components/common/header/MainHeader.styled';
+import { MainHeaderStyled, HeaderStyled } from '@components/header/MainHeader.style';
 import styled from 'styled-components';
 import { data } from '~/data';
+import { Link } from 'react-router-dom';
+import './Header.scss';
 console.log(data, 'data');
 
 const MainHeader = (props: any) => {
   return (
     <Styled.MainHeader>
-      {props.test === 'hello' ? 'TEST MainHeader' : 'MAINHEADER'}
+      <Link to="/">Home</Link>
+      <Link to="/news">News</Link>
     </Styled.MainHeader>
   );
 };

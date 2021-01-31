@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { increase, decrease, increaseBy, changeUsername } from '@actions/index';
-import { MainHeader } from '@components/common/header';
+import { MainHeader } from '@components/header';
 
 function Home() {
   const { count, username } = useSelector((state: any) => state.counterReducer);
