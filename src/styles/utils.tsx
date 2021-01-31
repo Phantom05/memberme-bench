@@ -179,3 +179,10 @@ export const muiOutlinedInputError = (color = commonStyled._color.red) => {
     }
   `;
 };
+
+export const StyleWrapper = css`
+  @media screen and (max-width: 1200px) {
+    width: 1200px;
+    margin: auto;
+  }
+`;
