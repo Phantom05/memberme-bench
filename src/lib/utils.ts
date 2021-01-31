@@ -4,8 +4,11 @@ export const CreateAction = (...types: any) => {
   return createAction(types)();
 };
 
-function sum(a: number, b: number): number {
+export function sum(a: number, b: number): number {
   return a + b;
 }
 
-export default sum;
+export function capitalize(str: string) {
+  // return str.charAt(0).toUpperCase() + str.slice(1);
+  return str.replace(/\b[a-z]/, (letter) => letter.toUpperCase());
+}
