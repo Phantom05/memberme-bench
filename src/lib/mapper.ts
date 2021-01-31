@@ -1,14 +1,26 @@
-export const pages = {
+export const mapper = {
+  brand: {
+    name: 'MemberMe',
+    img: '',
+  },
   links: {
-    header: [
-      {
+    header: {
+      home: {
         text: 'home',
-        href: '/home',
+        href: '/',
       },
-      {
+      news: {
         text: 'news',
         href: '/news',
       },
-    ],
+      signup: {
+        text: 'signup',
+        href: '/signup',
+      },
+      resetpassword: {
+        text: 'resetpassword',
+        href: '/resetpassword',
+      },
+    },
   },
 };

@@ -3,6 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { increase, decrease, increaseBy, changeUsername } from '@actions/index';
 import { MainHeader } from '@components/header';
+import { MainFooter } from '@components/footer';
+import { PlainTemplate } from '@components/template';
+import { Page } from '@pages/index';
+import { mapper } from '@lib/mapper';
+import { data } from '~/data';
+
+console.log(data);
 
 function Home() {
   const { count, username } = useSelector((state: any) => state.counterReducer);
@@ -21,24 +28,24 @@ function Home() {
   };
 
   return (
-    <div>
-      <MainHeader />
+    <Page title={`${mapper.brand.name} - Home`}>
+      <PlainTemplate header={<MainHeader />} footer={<MainFooter />}>
+        <h3 style={{ color: 'black' }}>{moment().format('MMMM Do YYYY, h:mm:ss a')}</h3>
+        <div>counter: {count}</div>
+        <button type="button" onClick={() => dispatch(increaseBy(10))}>
+          increase
+        </button>
+        <button type="button" onClick={() => dispatch(decrease())}>
+          decrease
+        </button>
 
-      <h3 style={{ color: 'black' }}>{moment().format('MMMM Do YYYY, h:mm:ss a')}</h3>
-      <div>counter: {count}</div>
-      <button type="button" onClick={() => dispatch(increaseBy(10))}>
-        increase
-      </button>
-      <button type="button" onClick={() => dispatch(decrease())}>
-        decrease
-      </button>
-
-      <form action="" onSubmit={handleSubmit}>
-        <input type="text" name="username" />
-        <button type="submit">Submit</button>
-      </form>
-      {username}
-    </div>
+        <form action="" onSubmit={handleSubmit}>
+          <input type="text" name="username" />
+          <button type="submit">Submit</button>
+        </form>
+        {username}
+      </PlainTemplate>
+    </Page>
   );
 }
 
