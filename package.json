@@ -1,9 +1,9 @@
 {
-  "name": "react-pure-ssr",
+  "name": "types-ssr",
   "version": "0.0.1",
-  "description": "react ssr examples without framework",
+  "description": "",
   "main": "dist/server.js",
-  "author": "dylanju",
+  "author": "phantom05",
   "license": "ISC",
   "keywords": [
     "ssr",
@@ -13,10 +13,10 @@
     "react-router",
     "react-router-dom"
   ],
-  "homepage": "https://github.com/DylanJu/react-pure-ssr",
+
   "repository": {
-    "type": "git",
-    "url": "https://github.com/DylanJu/react-pure-ssr.git"
+    "type": "git"
+
   },
   "scripts": {
     "start": "yarn build:dev && node ./dist/server.js",
