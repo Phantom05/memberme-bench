@@ -8,6 +8,8 @@ import { PlainTemplate } from '@components/template';
 import { Page } from '@pages/index';
 import { mapper } from '@lib/mapper';
 import { data } from '~/data';
+import { StyleWrapper } from '@styles/utils';
+import Container from '@material-ui/core/Container';
 
 console.log(data);
 
@@ -30,20 +32,22 @@ function Home() {
   return (
     <Page title={`${mapper.brand.name} - Home`}>
       <PlainTemplate header={<MainHeader />} footer={<MainFooter />}>
-        <h3 style={{ color: 'black' }}>{moment().format('MMMM Do YYYY, h:mm:ss a')}</h3>
-        <div>counter: {count}</div>
-        <button type="button" onClick={() => dispatch(increaseBy(10))}>
-          increase
-        </button>
-        <button type="button" onClick={() => dispatch(decrease())}>
-          decrease
-        </button>
+        <Container maxWidth="lg">
+          <h3 style={{ color: 'black' }}>{moment().format('MMMM Do YYYY, h:mm:ss a')}</h3>
+          <div>counter: {count}</div>
+          <button type="button" onClick={() => dispatch(increaseBy(10))}>
+            increase
+          </button>
+          <button type="button" onClick={() => dispatch(decrease())}>
+            decrease
+          </button>
 
-        <form action="" onSubmit={handleSubmit}>
-          <input type="text" name="username" />
-          <button type="submit">Submit</button>
-        </form>
-        {username}
+          <form action="" onSubmit={handleSubmit}>
+            <input type="text" name="username" />
+            <button type="submit">Submit</button>
+          </form>
+          {username}
+        </Container>
       </PlainTemplate>
     </Page>
   );
